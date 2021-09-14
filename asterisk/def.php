@@ -38,10 +38,10 @@ function genRange($from, $to)
         return 'X';
     }
     if ($fromN === $toN) {
-        return $from;
+        return $fromN;
     }
     if (($fromN + 1) === $toN) {
-        return "[{$from}{$to}]";
+        return "[{$fromN}{$toN}]";
     }
     if (($fromN + 2) === $toN) {
         return "[{$fromN}" . ($fromN + 1) . "{$toN}]";
