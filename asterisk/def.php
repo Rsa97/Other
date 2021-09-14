@@ -32,19 +32,21 @@ function getPage($url)
 
 function genRange($from, $to)
 {
-    if (intval($from) === 0 && intval($to) === '9') {
+    $fromN = intval($from);
+    $toN = intval($to);
+    if ($fromN === 0 && $toN === 9) {
         return 'X';
     }
-    if (intval($from) === intval($to)) {
+    if ($fromN === $toN) {
         return $from;
     }
-    if ((intval($from) + 1) === intval($to)) {
+    if (($fromN + 1) === $toN) {
         return "[{$from}{$to}]";
     }
-    if ((intval($from) + 2) === intval($to)) {
-        return "[{$from}" . (intval($from) + 1) . "{$to}]";
+    if (($fromN + 2) === $toN) {
+        return "[{$fromN}" . ($fromN + 1) . "{$toN}]";
     }
-    return "[{$from}-{$to}]";
+    return "[{$fromN}-{$toN}]";
 }
 
 function masks($prefix, $from, $to, &$list = [])
