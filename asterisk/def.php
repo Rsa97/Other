@@ -32,10 +32,10 @@ function getPage($url)
 
 function genRange($from, $to)
 {
-    if ($from === '0' && $to === '9') {
+    if (intval($from) === 0 && intval($to) === '9') {
         return 'X';
     }
-    if ($from === $to) {
+    if (intval($from) === intval($to)) {
         return $from;
     }
     if ((intval($from) + 1) === intval($to)) {
